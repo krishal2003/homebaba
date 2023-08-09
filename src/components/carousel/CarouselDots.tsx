@@ -63,7 +63,7 @@ export default function CarouselDots(props?: Props) {
   return {
     appendDots: (dots: React.ReactNode) => (
       <>
-        <StyledRoot component="ul" rounded={rounded} sx={sx} {...props}>
+        <StyledRoot rounded={rounded} sx={sx} {...props}>
           {dots}
         </StyledRoot>
       </>

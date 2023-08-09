@@ -1,9 +1,11 @@
-
 import { Box, Container } from '@mui/material';
 import axios from 'axios';
 import { m } from 'framer-motion';
 import { useCallback, useEffect, useState } from 'react';
+import MainLayout from 'src/layouts/main/MainLayout';
 import HomebabaCard from 'src/sections/@dashboard/user/cards/HomebabaCards';
+
+Homebaba.getLayout = (page: React.ReactElement) => <MainLayout>{page}</MainLayout>;
 
 function Homebaba() {
   const [propertyList, setPropertyList] = useState<[]>([]);

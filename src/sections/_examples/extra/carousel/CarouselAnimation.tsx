@@ -118,17 +118,6 @@ function CarouselItem({ item, isActive }: CarouselItemProps) {
           </Typography>
         </m.div>
 
-        <m.div variants={varFade().inRight}>
-          <Typography variant="body2" noWrap gutterBottom>
-            {item.description}
-          </Typography>
-        </m.div>
-
-        <m.div variants={varFade().inRight}>
-          <Button variant="contained" sx={{ mt: 3 }}>
-            View More
-          </Button>
-        </m.div>
       </CardContent>
     </Paper>
   );

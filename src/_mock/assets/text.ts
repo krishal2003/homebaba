@@ -2,6 +2,11 @@
 
 export const title = [
   `Emerge: The Triad of Harmony Collection`,
+  `Emerge: The Triad of Harmony Collection`,
+  `Emerge: The Triad of Harmony Collection`,
+  `Emerge: The Triad of Harmony Collection`,
+  `Emerge: The Triad of Harmony Collection`,
+  `Emerge: The Triad of Harmony Collection`,
   
 ];
 

@@ -96,7 +96,7 @@ export type IUserCard = {
   amount: string;
   productName: string;
   shoeimage: string;
-  shoeimagehover:string;
+  shoeimagehover: string;
 };
 
 export type ITournamentCard = {
@@ -138,53 +138,42 @@ export type ITournamentCard = {
   discord_link: string;
 };
 export type IHomebabaCard = {
-  // Media: Media;
   UnparsedAddress: string;
+  BuildingName: string;
+  CarportSpaces: string;
+  OccupantPhone: string;
+  YearBuilt: string;
+  DirectionFaces: string;
+  OccupantName: string;
+  BuildingFeatures: string[];
+  LaundryFeatures: string[];
+  Flooring: string[];
+  ExteriorFeatures: string[];
+  DoorFeatures: string[];
+  AccessibilityFeatures: string[];
   StateOrProvince: string;
   ListPrice: any;
   ListingId: number;
+  ListingKey: number;
   AssociationName2: string;
   BathroomsTotalInteger: number;
-  RoomsTotal: number;
+  RoomsTotal: string;
+  Stories: string;
+  TaxYear: string;
   City: string;
+  BuildingAreaTotal: string;
   ConstructionMaterials: string;
+  PublicRemarks: string;
   BedroomsTotal: number;
   id: number;
   slug: string;
-  game: {
-    id: number;
-    game_name: string;
-    game_image: string;
-    game_type: string;
-    elimination_modes: [
-      {
-        id: number;
-        elimination_mode: string;
-      }
-    ];
-  };
-  tournament_name: string;
   tournament_logo: string;
+  Media: {
+    Order: number;
+    MediaCategory: string;
+    MediaUrl: string;
+  };
   tournament_banner: string;
-  tournament_mode: string;
-  tournament_participants: string;
-  is_free: boolean;
-  tournament_fee: number;
-  maximum_no_of_participants: number;
-  tournament_description: string;
-  tournament_rules: string;
-  tournament_prize_pool: string;
-  registration_opening_date: string;
-  registration_closing_date: string;
-  tournament_start_date: string;
-  tournament_end_date: string;
-  created_at: string;
-  updated_at: string;
-  is_published: boolean;
-  is_registration_enabled: boolean;
-  accept_registration_automatic: boolean;
-  contact_email: string;
-  discord_link: string;
 };
 
 // ----------------------------------------------------------------------

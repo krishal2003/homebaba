@@ -9,7 +9,7 @@ import {
   Button,
   CardActions,
 } from '@mui/material';
-import { IHomebabaCard,  } from 'src/@types/user';
+import { IHomebabaCard } from 'src/@types/user';
 import SvgColor from 'src/components/svg-color';
 import { BASE_IMAGE_PATH } from 'src/utils/axios2';
 import Image from '../../../../components/image';
@@ -31,9 +31,11 @@ type Props = {
 
 export default function HomebabaCard({ property }: Props) {
   const {
-    ListingId,
+    ListingKey,
+    BuildingName,
     AssociationName2,
     tournament_logo,
+    Media: { MediaUrl },
     tournament_banner,
     StateOrProvince,
     ListPrice,
@@ -41,18 +43,17 @@ export default function HomebabaCard({ property }: Props) {
     RoomsTotal,
     City,
     BathroomsTotalInteger,
-    maximum_no_of_participants,
   } = property;
 
   return (
     <div>
       <Link
-        href={`tournaments/${ListingId}`}
-        key={ListingId}
+        href={`homebaba/${ListingKey}`}
+        key={ListingKey}
         style={{ textDecoration: 'none', color: 'white' }}
       >
         <Box>
-          <Card key={ListingId} sx={{ textAlign: 'center', mb: 2, textDecoration: 'none' }}>
+          <Card key={ListingKey} sx={{ textAlign: 'center', mb: 2, textDecoration: 'none' }}>
             <Box sx={{ position: 'relative' }}>
               <SvgColor
                 src="/assets/shape_avatar.svg"
@@ -86,17 +87,13 @@ export default function HomebabaCard({ property }: Props) {
 
               <StyledOverlay />
 
-              <Image
-                src={BASE_IMAGE_PATH + tournament_banner}
-                alt={AssociationName2}
-                ratio="16/9"
-              />
+              <Image src={MediaUrl} alt={AssociationName2} ratio="16/9" />
             </Box>
             <Typography
               variant="subtitle1"
               sx={{ mt: 3, mb: 0.5, pt: 2, textDecoration: 'none', color: 'white' }}
             >
-              {AssociationName2}
+              {BuildingName}
             </Typography>
             <Divider sx={{ borderStyle: 'dashed' }} />
             <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={1} sx={{ py: 1 }}>
@@ -143,9 +140,13 @@ export default function HomebabaCard({ property }: Props) {
             <Divider sx={{ borderStyle: 'dashed' }} />
             <Box sx={{ display: 'flex', justifyContent: 'center' }}>
               <CardActions sx={{ display: 'flex', gap: 2 }}>
-                <Link href="coming-soon">
+                <Link
+                  href={`homebaba/${ListingKey}`}
+                  key={ListingKey}
+                  style={{ textDecoration: 'none', color: 'white' }}
+                >
                   <Button variant="contained" sx={{ pl: 4, pr: 4 }}>
-                    Join
+                    See More
                   </Button>
                 </Link>
               </CardActions>
