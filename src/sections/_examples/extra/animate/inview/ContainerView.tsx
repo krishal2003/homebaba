@@ -49,7 +49,6 @@ export default function ContainerView({
     >
       {isText ? (
         <MotionContainer
-          component={m.h1}
           sx={{ typography: 'h1', display: 'flex', overflow: 'hidden' }}
         >
           {TEXT.split('').map((letter, index) => (

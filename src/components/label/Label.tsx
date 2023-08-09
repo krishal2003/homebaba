@@ -21,7 +21,6 @@ const Label = forwardRef<HTMLSpanElement, LabelProps>(
     return (
       <StyledLabel
         ref={ref}
-        component="span"
         ownerState={{ color, variant }}
         sx={{
           ...(startIcon && { pl: 0.75 }),

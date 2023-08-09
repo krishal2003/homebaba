@@ -22,24 +22,7 @@ const ScrollProgress = forwardRef<HTMLDivElement, ScrollProgressProps>(
 
     return (
       <Box
-        ref={ref}
-        component={m.div}
-        sx={{
-          top: 0,
-          left: 0,
-          right: 0,
-          height: size,
-          zIndex: 1999,
-          position: 'fixed',
-          transformOrigin: '0%',
-          bgcolor: `${color}.main`,
-          ...(color === 'inherit' && {
-            bgcolor: 'text.primary',
-          }),
-          ...sx,
-        }}
-        style={{ scaleX }}
-        {...other}
+       
       />
     );
   }
