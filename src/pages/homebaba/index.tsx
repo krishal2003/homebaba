@@ -1,11 +1,11 @@
-import { Box, Container } from '@mui/material';
+import { Box, Container, Typography } from '@mui/material';
 import axios from 'axios';
 import { m } from 'framer-motion';
 import { useCallback, useEffect, useState } from 'react';
 import MainLayout from 'src/layouts/main/MainLayout';
 import HomebabaCard from 'src/sections/@dashboard/user/cards/HomebabaCards';
 
-Homebaba.getLayout = (page: React.ReactElement) => <MainLayout>{page}</MainLayout>;
+
 
 function Homebaba() {
   const [propertyList, setPropertyList] = useState<[]>([]);
@@ -27,6 +27,9 @@ function Homebaba() {
 
   return (
     <Container sx={{ pt: 1, pb: 10, position: 'relative' }}>
+      <Typography variant="h2" sx={{ pt: 7 }}>
+        Commercial Businesses for Sale{' '}
+      </Typography>
       <Box
         component={m.div}
         gap={3}
@@ -34,7 +37,7 @@ function Homebaba() {
         gridTemplateColumns={{
           xs: 'repeat(1, 1fr)',
           sm: 'repeat(2, 1fr)',
-          md: 'repeat(3, 1fr)',
+          md: 'repeat(4, 1fr)',
         }}
         sx={{ pt: 5, pb: 2 }}
       >

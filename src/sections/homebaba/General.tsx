@@ -14,9 +14,7 @@ type Props = {
 function General({ property }: Props) {
   return (
     <Box>
-      <Typography variant="h2" sx={{ mt: 3, mb: 2 }}>
-        {property.BuildingName}
-      </Typography>
+     
       <Grid container spacing={5} sx={{ my: 3 }}>
         <Grid item xs={12} md={6}>
           <Stack>

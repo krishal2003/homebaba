@@ -8,6 +8,7 @@ import {
   Box,
   Button,
   CardActions,
+  Stack,
 } from '@mui/material';
 import { IHomebabaCard } from 'src/@types/user';
 import SvgColor from 'src/components/svg-color';
@@ -34,7 +35,7 @@ export default function HomebabaCard({ property }: Props) {
     ListingKey,
     BuildingName,
     AssociationName2,
-    tournament_logo,
+    BusinessName,
     Media: { MediaUrl },
     tournament_banner,
     StateOrProvince,
@@ -60,7 +61,6 @@ export default function HomebabaCard({ property }: Props) {
                 sx={{
                   width: 144,
                   height: 62,
-                  zIndex: 10,
                   left: 0,
                   right: 0,
                   bottom: -26,
@@ -70,33 +70,25 @@ export default function HomebabaCard({ property }: Props) {
                 }}
               />
 
-              <Avatar
-                alt={AssociationName2}
-                src={BASE_IMAGE_PATH + tournament_logo}
-                sx={{
-                  width: 64,
-                  height: 64,
-                  zIndex: 11,
-                  left: 0,
-                  right: 0,
-                  bottom: -32,
-                  mx: 'auto',
-                  position: 'absolute',
-                }}
-              />
-
               <StyledOverlay />
 
-              <Image src={MediaUrl} alt={AssociationName2} ratio="16/9" />
+              <Image src={BASE_IMAGE_PATH + MediaUrl} alt={AssociationName2} ratio="16/9" />
             </Box>
             <Typography
-              variant="subtitle1"
-              sx={{ mt: 3, mb: 0.5, pt: 2, textDecoration: 'none', color: 'white' }}
+              variant="h3"
+              textAlign="left"
+              sx={{ mt: 2, ml: 1, mb: 0.5, textDecoration: 'none', color: 'primary' }}
             >
-              {BuildingName}
+              $ {ListPrice}
             </Typography>
-            <Divider sx={{ borderStyle: 'dashed' }} />
-            <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={1} sx={{ py: 1 }}>
+            <Stack textAlign="left" sx={{ pl: 2, pb: 1 }}>
+              <Typography variant="h6">{BuildingName}</Typography>
+              <Typography variant="h6">{BusinessName}</Typography>
+              <Typography variant="h6">
+                {City}, {StateOrProvince}
+              </Typography>
+            </Stack>
+            {/* <Box display="grid" gridTemplateColumns="repeat(3, 1fr)" gap={1} sx={{ py: 1 }}>
               <div>
                 <Typography variant="caption" component="div" sx={{ color: 'text.disabled' }}>
                   Total Bathroom
@@ -136,21 +128,10 @@ export default function HomebabaCard({ property }: Props) {
                 </Typography>
                 <Typography variant="button">{StateOrProvince}</Typography>
               </div>
-            </Box>
-            <Divider sx={{ borderStyle: 'dashed' }} />
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <CardActions sx={{ display: 'flex', gap: 2 }}>
-                <Link
-                  href={`homebaba/${ListingKey}`}
-                  key={ListingKey}
-                  style={{ textDecoration: 'none', color: 'white' }}
-                >
-                  <Button variant="contained" sx={{ pl: 4, pr: 4 }}>
-                    See More
-                  </Button>
-                </Link>
-              </CardActions>
-            </Box>
+            </Box> */}
+            {/* <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              
+            </Box> */}
           </Card>
         </Box>
       </Link>

@@ -140,6 +140,7 @@ export type ITournamentCard = {
 export type IHomebabaCard = {
   UnparsedAddress: string;
   BuildingName: string;
+  BusinessName: string;
   CarportSpaces: string;
   OccupantPhone: string;
   YearBuilt: string;

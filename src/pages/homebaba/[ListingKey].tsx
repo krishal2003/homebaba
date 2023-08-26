@@ -67,39 +67,37 @@ const getPost = useCallback(async () => {
 
   const [currentTab, setCurrentTab] = useState('general');
 
-  const TABS = [
-    {
-      value: 'general',
-      label: 'General',
-      icon: <Iconify icon="mdi:information" />,
-      component: propertyDetails && <General property={propertyDetails}/>,
-    },
-    {
-      value: 'details',
-      label: 'Details',
-      icon: <Iconify icon="solar:home-bold" />,
-      component: propertyDetails && <Details property={propertyDetails} />,
-    },
-    {
-      value: 'gallery',
-      label: 'Gallery',
-      icon: <Iconify icon="grommet-icons:gallery" />,
-      component: <Gallery />,
-    },
-  ];
+  // const TABS = [
+  //   {
+  //     value: 'general',
+  //     label: 'General',
+  //     icon: <Iconify icon="mdi:information" />,
+  //     component: propertyDetails && <General property={propertyDetails}/>,
+  //   },
+  //   {
+  //     value: 'details',
+  //     label: 'Details',
+  //     icon: <Iconify icon="solar:home-bold" />,
+  //     component: propertyDetails && <Details property={propertyDetails} />,
+  //   },
+  //   {
+  //     value: 'gallery',
+  //     label: 'Gallery',
+  //     icon: <Iconify icon="grommet-icons:gallery" />,
+  //     component: <Gallery />,
+  //   },
+  // ];
   return (
     <MainLayout>
       <Container sx={{ pt: 1, pb: 10 }}>
-        
-
-        <Tabs value={currentTab} onChange={(event, newValue) => setCurrentTab(newValue)}>
+        {/* <Tabs value={currentTab} onChange={(event, newValue) => setCurrentTab(newValue)}>
           {TABS.map((tab) => (
             <Tab key={tab.value} label={tab.label} icon={tab.icon} value={tab.value} />
           ))}
-        </Tabs>
-        {TABS.map((tab) => tab.value === currentTab && <Box key={tab.value}>{tab.component}</Box>)}
-
-      
+        </Tabs> */}
+        {/* {TABS.map((tab) => tab.value === currentTab && <Box key={tab.value}>{tab.component}</Box>)} */}
+        {propertyDetails && <Details property={propertyDetails} />}
+        {propertyDetails && <General property={propertyDetails} />}
       </Container>
     </MainLayout>
   );
