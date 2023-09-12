@@ -33,9 +33,9 @@ const LINKS = [
   {
     headline: 'Contact',
     children: [
-      { name: '+977 9840030835', href: 'tel:9840030835' },
-      { name: 'dmerce.np@gmail.com', href: 'mailto:dmerce.np@gmail.com' },
-      { name: 'Kalanki, Kathmandu', href: '#' },
+      { name: '+02 814568104561045614510', href: 'tel:471154002' },
+      { name: 'homebaba.ca@gmail.com', href: 'mailto:homebabba.np@gmail.com' },
+      { name: 'Montreal, Canada', href: '#' },
     ],
   },
 ];
@@ -67,14 +67,12 @@ export default function Footer() {
             },
           }}
         >
-          <Grid item xs={12} sx={{ mb: 3 }}>
-            <Logo sx={{ mx: { xs: 'auto', md: 'inherit' } }} />
-          </Grid>
+          
 
           <Grid item xs={8} md={3}>
             <Typography variant="body2" sx={{ pr: { md: 5 } }}>
-              Discover, Shop, and Experience the Ultimate Online Retail Adventure with Confidence
-              and Convenience!
+              Discover, Shop, and Experience the Ultimate Online Rental House and Condos with
+              Confidence and Convenience!
             </Typography>
 
             <Stack
@@ -135,7 +133,7 @@ export default function Footer() {
             textAlign: { xs: 'center', md: 'center' },
           }}
         >
-          © Dmerce {new Date().getFullYear()}
+          © Homebaba {new Date().getFullYear()}
         </Typography>
       </Container>
     </Box>

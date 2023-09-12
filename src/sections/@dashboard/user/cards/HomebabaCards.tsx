@@ -72,7 +72,30 @@ export default function HomebabaCard({ property }: Props) {
 
               <StyledOverlay />
 
-              <Image src={BASE_IMAGE_PATH + MediaUrl} alt={AssociationName2} ratio="16/9" />
+              <Stack sx={{ position: 'relative' }}>
+                <Image src={BASE_IMAGE_PATH + MediaUrl} alt={AssociationName2} ratio="16/9" />
+                <Button
+                  sx={{
+                    position: 'absolute',
+                    bottom: 4,
+                    left: 4,
+                  }}
+                  color="success"
+                  variant="contained"
+                >
+                  For Sale
+                </Button>
+                <Button
+                  sx={{
+                    position: 'absolute',
+                    bottom: 4,
+                    right: 4,
+                  }}
+                  color="warning"
+                >
+                  4 mins ago
+                </Button>
+              </Stack>
             </Box>
             <Typography
               variant="h3"
@@ -82,9 +105,9 @@ export default function HomebabaCard({ property }: Props) {
               $ {ListPrice}
             </Typography>
             <Stack textAlign="left" sx={{ pl: 2, pb: 1 }}>
-              <Typography variant="h6">{BuildingName}</Typography>
-              <Typography variant="h6">{BusinessName}</Typography>
-              <Typography variant="h6">
+              <Typography variant="body1">{BuildingName}</Typography>
+              <Typography variant="body2">{BusinessName}</Typography>
+              <Typography variant="body2">
                 {City}, {StateOrProvince}
               </Typography>
             </Stack>
@@ -128,9 +151,6 @@ export default function HomebabaCard({ property }: Props) {
                 </Typography>
                 <Typography variant="button">{StateOrProvince}</Typography>
               </div>
-            </Box> */}
-            {/* <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              
             </Box> */}
           </Card>
         </Box>

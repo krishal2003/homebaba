@@ -26,7 +26,7 @@ function Homebaba() {
   }, [getPropertyList]);
 
   return (
-    <Container sx={{ pt: 1, pb: 10, position: 'relative' }}>
+    <Container maxWidth={false} sx={{ pt: 1, pb: 10, position: 'relative' }}>
       <Typography variant="h2" sx={{ pt: 7 }}>
         Commercial Businesses for Sale{' '}
       </Typography>
@@ -37,7 +37,7 @@ function Homebaba() {
         gridTemplateColumns={{
           xs: 'repeat(1, 1fr)',
           sm: 'repeat(2, 1fr)',
-          md: 'repeat(4, 1fr)',
+          md: 'repeat(3, 1fr)',
         }}
         sx={{ pt: 5, pb: 2 }}
       >

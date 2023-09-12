@@ -32,7 +32,7 @@ export default function ContactForm() {
       <m.div variants={varFade().inUp}>
         <Box sx={{textAlign:'center'}}>
 
-        <Button size="large" variant="contained" >
+        <Button  variant="contained" >
           Submit Now
         </Button>
         </Box>
