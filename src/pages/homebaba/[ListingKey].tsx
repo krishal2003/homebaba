@@ -59,17 +59,17 @@ export default function HomebabaCardPage() {
   return (
     <MainLayout>
       <Container maxWidth={false} sx={{ pt: 1, pb: 10 }}>
-       
         <Stack flexDirection="column">
           <Box>{propertyDetails && <Details property={propertyDetails} />}</Box>
-          <Box sx={{ pt: 3 }}>
+          <Box sx={{pt:4}}>{propertyDetails && <General property={propertyDetails} />}</Box>
+          {/* <Box sx={{ pt: 3 }}>
             <Button variant="outlined" sx={{ ml: 18 }} onClick={() => setShowGeneral(!showGeneral)}>
               {showGeneral ? 'See Less Facts and Features' : 'See More Facts and Features'}
             </Button>{' '}
             <Box sx={{ pt: 4 }}>
               {propertyDetails && <>{showGeneral && <General property={propertyDetails} />}</>}
             </Box>
-          </Box>
+          </Box> */}
         </Stack>
       </Container>
     </MainLayout>

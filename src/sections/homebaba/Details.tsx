@@ -7,30 +7,59 @@ import {
   Container,
   Grid,
   IconButton,
-  Paper,
   Stack,
   Typography,
+  useMediaQuery,
 } from '@mui/material';
-import Markdown from 'src/components/markdown/Markdown';
-import TournamentSponsor from '../tournaments/TournamentSponsor';
-import { Tournament } from 'src/@types/tournaments';
 import { IHomebabaCard } from 'src/@types/user';
 import Image from 'src/components/image/Image';
 import { ContactForm } from '../contact';
-import Iconify from 'src/components/iconify/Iconify';
 import Link from 'next/link';
-import General from './General';
 import CustomBreadcrumbs from 'src/components/custom-breadcrumbs/CustomBreadcrumbs';
 import { PATH_PAGE } from 'src/routes/paths';
 import Head from 'next/head';
-import DemoLightboxPage from 'src/components/lightbox';
+import _mock from 'src/_mock/_mock';
+import Lightbox from 'src/components/lightbox/Lightbox';
+
+const imagesLightbox = [...Array(8)].map((_, index) => ({
+  src: _mock.image.cover(index + 1),
+  title: 'Flamingo',
+  description: 'Vicko Mozara \n Veliki zali, Dubravica, Croatia',
+}));
 
 type Props = {
   property: IHomebabaCard;
 };
 function Details({ property }: Props) {
+
+  const [state, setState] = useState({
+    disabledZoom: false,
+    disabledVideo: false,
+    disabledTotal: false,
+    disabledCaptions: true,
+    disabledSlideshow: false,
+    disabledThumbnails: false,
+    disabledFullscreen: false,
+  });
+
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setState({
+      ...state,
+      [event.target.name]: event.target.checked,
+    });
+  };
+
+  const [selectedImage, setSelectedImage] = useState<number>(-1);
+
+  const handleOpenBasic = (imageUrl: string) => {
+    const imageIndex = imagesLightbox.findIndex((image) => image.src === imageUrl);
+    setSelectedImage(imageIndex);
+  };
+
+  const handleCloseBasic = () => {
+    setSelectedImage(-1);
+  };
   const [propertyDetails, setPropertyDetails] = useState();
-  const [showGeneral, setShowGeneral] = useState(false); // Added state for showing/hiding General component
   return (
     <>
       <Head>
@@ -47,7 +76,61 @@ function Details({ property }: Props) {
         ]}
       />{' '}
       <Container>
-
+        <Stack>
+          <Grid item xs={12} md={9}>
+            <Box
+              gap={1}
+              display="grid"
+              gridTemplateColumns={{
+                xs: 'repeat(2, 1fr)',
+                sm: 'repeat(3, 1fr)',
+                md: 'repeat(5, 1fr)',
+              }}
+            >
+              {imagesLightbox.map((img) => (
+                <Image
+                  key={img.src}
+                  alt={img.src}
+                  src={img.src}
+                  ratio="1/1"
+                  onClick={() => handleOpenBasic(img.src)}
+                  sx={{
+                    borderRadius: 1,
+                    cursor: 'pointer',
+                  }}
+                />
+              ))}
+            </Box>
+          </Grid>
+          <Lightbox
+            disabledZoom={state.disabledZoom}
+            disabledTotal={state.disabledTotal}
+            disabledVideo={state.disabledVideo}
+            disabledCaptions={state.disabledCaptions}
+            disabledSlideshow={state.disabledSlideshow}
+            disabledThumbnails={state.disabledThumbnails}
+            disabledFullscreen={state.disabledFullscreen}
+            index={selectedImage}
+            open={selectedImage >= 0}
+            close={handleCloseBasic}
+            slides={[
+              ...imagesLightbox,
+              {
+                type: 'video',
+                width: 1280,
+                height: 720,
+                poster:
+                  'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/images/BigBuckBunny.jpg',
+                sources: [
+                  {
+                    src: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/BigBuckBunny.mp4',
+                    type: 'video/mp4',
+                  },
+                ],
+              },
+            ]}
+          />
+        </Stack>
         <Box>
           <Grid container spacing={5} sx={{ my: 3 }}>
             <Grid item xs={12} md={8}>
@@ -64,7 +147,7 @@ function Details({ property }: Props) {
                 </Typography>
               </Box>
               <Box display="flex" justifyContent="space-between" alignItems="center">
-                <Stack flexDirection="row" gap={3}>
+                <Stack flexDirection={{ md: 'row', sm: 'column' }} gap={{ md: '3', sm: '0' }}>
                   <Typography variant="body1">{property.BedroomsTotal} bed</Typography>
                   <Typography variant="body1">{property.BathroomsTotalInteger} bath</Typography>
                   <Typography variant="body1">{property.BuildingAreaTotal} sq m</Typography>
@@ -87,7 +170,15 @@ function Details({ property }: Props) {
                       Join or Sign in
                     </Typography>
                   </Link>
-                  <Typography variant="body1">
+                  <Typography
+                    variant="body1"
+                    sx={{
+                      display: {
+                        xs: 'none',
+                        sm: 'block',
+                      },
+                    }}
+                  >
                     Real estate boards need a verified account to see photos & sold data.
                   </Typography>
                 </Stack>
@@ -99,11 +190,25 @@ function Details({ property }: Props) {
                   <Button variant="outlined">View on Map</Button>
                 </Stack>
                 <Stack sx={{ pt: 5 }}>
-                  <Button variant="outlined">History</Button>
+                  <Button
+                    variant="outlined"
+                    sx={{
+                      display: {
+                        xs: 'none',
+                        sm: 'block',
+                      },
+                    }}
+                  >
+                    History
+                  </Button>
                 </Stack>
               </Stack>
 
-              <Stack flexDirection="row" gap={20} sx={{ pt: 3 }}>
+              <Stack
+                flexDirection={{ md: 'row', xs: 'column' }}
+                gap={{ md: '20', xs: '0' }}
+                sx={{ pt: 3 }}
+              >
                 <Stack>
                   <Stack flexDirection="row">
                     <Typography variant="body1" fontWeight="bold">

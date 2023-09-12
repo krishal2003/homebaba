@@ -9,18 +9,17 @@ import { TextAnimate, MotionContainer, varFade } from '../../components/animate'
 
 const CONTACTS = [
   {
-    country: 'Nepal',
-    email: 'support@esan.com',
-    address: 'Bharatpur,Chitwan',        
-    phoneNumber: ' 9841542865',
+    country: 'Canada',
+    email: 'homebabasupport@esan.com',
+    address: 'Vancover,Vancover',
+    phoneNumber: ' 865130215648152',
   },
   {
-    country: 'Nepal',
-    email: 'aayushsharma@gmail.com',
-    address: 'Imadol,Lalitpur',
-    phoneNumber: '9840030835',
+    country: 'Canada',
+    email: 'homebaba@gmail.com',
+    address: 'Ottawa,Ontario',
+    phoneNumber: '51632015630256',
   },
-
 ];
 
 const StyledRoot = styled('div')(({ theme }) => ({

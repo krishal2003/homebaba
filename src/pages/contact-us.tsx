@@ -19,7 +19,7 @@ export default function ContactPage() {
   return (
     <>
       <Head>
-        <title> Contact us | Dmerce</title>
+        <title> Contact us | Homebaba</title>
       </Head>
 
       <ContactHero />

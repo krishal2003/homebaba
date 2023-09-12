@@ -12,6 +12,12 @@ const navConfig = [
     path: '/',
   },
  
+  {
+    title: 'Contact us',
+    icon: <Iconify icon="eva:home-fill" />,
+    path: '/contact-us',
+  },
+ 
   
 ];
 

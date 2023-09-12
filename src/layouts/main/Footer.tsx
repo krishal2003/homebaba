@@ -67,12 +67,10 @@ export default function Footer() {
             },
           }}
         >
-          
-
           <Grid item xs={8} md={3}>
             <Typography variant="body2" sx={{ pr: { md: 5 } }}>
-              Discover, Shop, and Experience the Ultimate Online Rental House and Condos with
-              Confidence and Convenience!
+              Experience the Ultimate Online Rental House and Condos with Confidence and
+              Convenience!
             </Typography>
 
             <Stack

@@ -9,10 +9,11 @@ import ScrollProgress from '../components/scroll-progress';
 import Link from 'next/link';
 import SimpleLayout from 'src/layouts/simple/SimpleLayout';
 import Homebaba from './homebaba';
+import MainLayout from 'src/layouts/main/MainLayout';
 
 // ----------------------------------------------------------------------
 
-HomePage.getLayout = (page: React.ReactElement) => <SimpleLayout> {page} </SimpleLayout>;
+HomePage.getLayout = (page: React.ReactElement) => <MainLayout> {page} </MainLayout>;
 
 // ----------------------------------------------------------------------
 
