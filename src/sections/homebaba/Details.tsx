@@ -1,16 +1,5 @@
-/* eslint-disable @typescript-eslint/no-shadow */
 import React, { useState } from 'react';
-import {
-  Box,
-  Button,
-  Card,
-  Container,
-  Grid,
-  IconButton,
-  Stack,
-  Typography,
-  useMediaQuery,
-} from '@mui/material';
+import { Box, Button, Card, Container, Grid, IconButton, Stack, Typography } from '@mui/material';
 import { IHomebabaCard } from 'src/@types/user';
 import Image from 'src/components/image/Image';
 import { ContactForm } from '../contact';
@@ -31,7 +20,6 @@ type Props = {
   property: IHomebabaCard;
 };
 function Details({ property }: Props) {
-
   const [state, setState] = useState({
     disabledZoom: false,
     disabledVideo: false,
@@ -318,76 +306,6 @@ function Details({ property }: Props) {
                   </Card>
                 </Link>
               </Stack>
-              {/* <Stack>
-                <Box sx={{ mb: 2 }}>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Owner Name: </Typography>
-                    <Typography sx={{ ml: 1 }}>{property.OccupantName}</Typography>
-                  </Stack>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Contact Details: </Typography>
-                    <Typography sx={{ ml: 1 }}>{property.OccupantPhone}</Typography>
-                  </Stack>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">House Direction: </Typography>
-                    <Typography sx={{ ml: 1 }}>{property.DirectionFaces}</Typography>
-                  </Stack>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Year Built: </Typography>
-                    <Typography sx={{ ml: 1 }}>{property.YearBuilt}</Typography>
-                  </Stack>
-                </Box>
-                <Box>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Building Features:</Typography>
-                    <Typography variant="body2" color="textPrimary" sx={{ ml: 1 }}>
-                      {property.BuildingFeatures.length > 0
-                        ? property.BuildingFeatures.join(', ')
-                        : 'null'}
-                    </Typography>
-                  </Stack>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Laundry Features:</Typography>
-
-                    <Typography variant="body2" color="textPrimary" sx={{ ml: 1 }}>
-                      {property.LaundryFeatures.length > 0
-                        ? property.LaundryFeatures.join(', ')
-                        : 'None'}
-                    </Typography>
-                  </Stack>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Flooring Features:</Typography>
-                    <Typography variant="body2" color="textPrimary" sx={{ ml: 1 }}>
-                      {property.Flooring.length > 0 ? property.Flooring.join(', ') : 'None'}
-                    </Typography>
-                  </Stack>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Exterior Features:</Typography>
-
-                    <Typography variant="body2" color="textPrimary" sx={{ ml: 1 }}>
-                      {property.ExteriorFeatures.length > 0
-                        ? property.ExteriorFeatures.join(', ')
-                        : 'None'}
-                    </Typography>
-                  </Stack>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Door Features:</Typography>
-
-                    <Typography variant="body2" color="textPrimary" sx={{ ml: 1 }}>
-                      {property.DoorFeatures.length > 0 ? property.DoorFeatures.join(', ') : 'None'}
-                    </Typography>
-                  </Stack>
-                  <Stack flexDirection="row" alignItems="center">
-                    <Typography color="text.secondary">Door Features:</Typography>
-
-                    <Typography variant="body2" color="textPrimary" sx={{ ml: 1 }}>
-                      {property.AccessibilityFeatures.length > 0
-                        ? property.AccessibilityFeatures.join(', ')
-                        : 'None'}
-                    </Typography>
-                  </Stack>
-                </Box>
-              </Stack> */}
             </Grid>
             <Grid item xs={12} md={4}>
               <Typography variant="h4" sx={{ textAlign: 'center' }}>
